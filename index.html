@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robinhood Clone - Investing for Everyone</title>
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-['Inter'] antialiased">
+    <!-- Header/Navigation -->
+    <header class="fixed w-full bg-white shadow-sm z-50">
+        <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center">
+                <a href="#" class="text-2xl font-bold text-[#00C805]">Robinhood</a>
+            </div>
+            
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#" class="text-gray-600 hover:text-black">Products</a>
+                <a href="#" class="text-gray-600 hover:text-black">Learn</a>
+                <a href="#" class="text-gray-600 hover:text-black">Support</a>
+                <a href="#" class="text-gray-600 hover:text-black">Who we are</a>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <button id="loginBtn" class="text-black hover:text-[#00C805]">Log in</button>
+                <button class="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition-colors">Sign up</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-r from-black to-gray-900 text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">Investing for Everyone</h1>
+                <p class="text-xl md:text-2xl mb-8 text-gray-300">Commission-free investing, plus the tools you need to put your money in motion.</p>
+                <button class="bg-[#00C805] text-black px-8 py-3 rounded-full text-lg font-semibold hover:bg-[#00B805] transition-colors">
+                    Sign up now
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="p-6 rounded-lg hover:shadow-xl transition-shadow">
+                    <i class="fas fa-chart-line text-4xl text-[#00C805] mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-3">Invest in stocks</h3>
+                    <p class="text-gray-600">Invest in companies you love, commission-free.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="p-6 rounded-lg hover:shadow-xl transition-shadow">
+                    <i class="fas fa-coins text-4xl text-[#00C805] mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-3">Crypto</h3>
+                    <p class="text-gray-600">Buy and sell cryptocurrency with no commission fees.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="p-6 rounded-lg hover:shadow-xl transition-shadow">
+                    <i class="fas fa-mobile-alt text-4xl text-[#00C805] mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-3">Mobile Trading</h3>
+                    <p class="text-gray-600">Trade stocks and crypto on the go with our mobile app.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learn Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8">Learn As You Grow</h2>
+                <p class="text-xl text-gray-600 mb-12">Our goal is to make investing in financial markets more affordable, more intuitive, and more fun, no matter how much experience you have.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-sm">
+                        <i class="fas fa-graduation-cap text-3xl text-[#00C805] mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-3">Learn the Basics</h3>
+                        <p class="text-gray-600">Get started with our educational resources.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-sm">
+                        <i class="fas fa-book-reader text-3xl text-[#00C805] mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-3">Market News</h3>
+                        <p class="text-gray-600">Stay updated with the latest market insights.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold">Log in to Robinhood</h2>
+                <button id="closeModal" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="loginForm" class="space-y-4">
+                <div>
+                    <label class="block text-gray-700 mb-2" for="email">Email</label>
+                    <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00C805]" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700 mb-2" for="password">Password</label>
+                    <input type="password" id="password" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00C805]" required>
+                </div>
+                <button type="submit" class="w-full bg-black text-white py-2 rounded-lg hover:bg-gray-800 transition-colors">
+                    Log in
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="font-semibold mb-4">Products</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Stocks</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Crypto</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Cash Card</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Learn</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Help Center</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">About</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Our Mission</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Leadership</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Legal</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400">
+                <p>&copy; 2024 Robinhood Clone. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
