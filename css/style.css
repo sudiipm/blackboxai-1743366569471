@@ -1,0 +1,115 @@
+/* Custom styles to complement Tailwind CSS */
+
+/* Smooth scrolling behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Modal animation */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#loginModal.active {
+    display: flex;
+}
+
+#loginModal .bg-white {
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+/* Custom hover effects for feature cards */
+.feature-card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+/* Custom focus styles for form inputs */
+input:focus {
+    border-color: #00C805;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 200, 5, 0.2);
+}
+
+/* Custom button hover effects */
+.btn-primary:hover {
+    background-color: #00B805;
+    transform: translateY(-1px);
+    transition: all 0.2s ease;
+}
+
+/* Responsive typography adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    p {
+        font-size: 1rem;
+    }
+}
+
+/* Custom animations */
+.hover-lift {
+    transition: transform 0.2s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-2px);
+}
+
+/* Custom shadows */
+.custom-shadow {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Navigation link hover effect */
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #00C805;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Feature card styles */
+.feature-card {
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Button transitions */
+.button-transition {
+    transition: all 0.3s ease;
+}
+
+.button-transition:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
